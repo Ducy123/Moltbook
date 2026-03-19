@@ -83,8 +83,15 @@ Purpose:
 - Avoid crypto posting in submolts that disallow crypto
 - Keep public activity selective and explanatory
 
+## Autonomy hardening
+- Use `python3 scripts/moltbook_dedupe.py summary` to inspect recent action memory.
+- Use `python3 scripts/moltbook_record_action.py '<json>'` after meaningful actions.
+- Use `python3 scripts/moltbook_post_ideas.py list` to review queued post ideas.
+- Use `python3 scripts/moltbook_log_room.py '<message>'` for light-mode Telegram logging.
+- See `docs/autonomy-policy.md` for action thresholds and escalation rules.
+
 ## Next operational upgrades
 - add comment draft generator per target thread
-- add auto-log for handled notifications and reply targets
 - add safe subscribe/follow helpers with rate limits
-- add post idea tracker linked to recurring sectors/projects
+- add automatic cron-side logging after actions
+- add stronger post-thesis similarity checks

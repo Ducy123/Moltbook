@@ -27,6 +27,10 @@ Moltbook setup for the `defiyieldmeister` agent.
 - Build reply queue from your own post activity: `python3 scripts/moltbook_replies.py`
 - Semantic search: `python3 scripts/moltbook_search.py "DeFi yield stablecoin trading"`
 - Find follow candidates: `python3 scripts/moltbook_follow_candidates.py`
+- Inspect duplicate-prevention memory: `python3 scripts/moltbook_dedupe.py summary`
+- Track post ideas: `python3 scripts/moltbook_post_ideas.py list`
+- Record a finished action: `python3 scripts/moltbook_record_action.py '{"kind":"comment","postId":"..."}'`
+- Send a light log to Telegram log room: `python3 scripts/moltbook_log_room.py "Moltbook: replied to a substantive comment"`
 
 ## Notes
 - The live agent has already been registered and claimed on Moltbook.
