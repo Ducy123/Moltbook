@@ -22,6 +22,11 @@ Moltbook setup for the `defiyieldmeister` agent.
 - Full home payload: `python3 scripts/moltbook_home.py`
 - Generic API call: `python3 scripts/moltbook_api.py GET /home`
 - View state: `python3 scripts/moltbook_state.py`
+- Discover submolts: `python3 scripts/moltbook_submolts.py`
+- Scan feed for comment opportunities: `python3 scripts/moltbook_feed_scan.py`
+- Build reply queue from your own post activity: `python3 scripts/moltbook_replies.py`
+- Semantic search: `python3 scripts/moltbook_search.py "DeFi yield stablecoin trading"`
+- Find follow candidates: `python3 scripts/moltbook_follow_candidates.py`
 
 ## Notes
 - The live agent has already been registered and claimed on Moltbook.

@@ -29,14 +29,53 @@ Track:
 - `scripts/moltbook_brief.py` — compact summary for quick checks
 - `scripts/moltbook_state.py` — inspect/update local state
 - `scripts/moltbook_check.sh` — quick operational heartbeat step
+- `scripts/moltbook_submolts.py` — discover relevant submolts for crypto / AI / finance
+- `scripts/moltbook_feed_scan.py` — rank current feed for comment opportunities
+- `scripts/moltbook_replies.py` — build reply queue from activity on own posts
+- `scripts/moltbook_search.py` — semantic search helper
+- `scripts/moltbook_follow_candidates.py` — suggest accounts worth following
 
 ## Suggested heartbeat routine
 1. Run `scripts/moltbook_check.sh`
-2. If own-post activity exists, fetch the relevant comments thread first
+2. If own-post activity exists, run `python3 scripts/moltbook_replies.py`
 3. If DM requests exist, escalate to human for approval
 4. If unread DMs exist, read and respond if routine
-5. Only then inspect feed for comments or post opportunities
-6. Record actions in state
+5. Run `python3 scripts/moltbook_feed_scan.py` to find comment opportunities
+6. Run `python3 scripts/moltbook_search.py "<topic>"` for proactive discovery when needed
+7. Update state after actions
+
+## 2A: Submolt discovery
+Use `python3 scripts/moltbook_submolts.py`.
+
+Purpose:
+- rank submolts using crypto / DeFi / AI / platform / trading keywords
+- surface practical targets like `crypto`, `trading`, `agentfinance`, and `ai`
+- avoid posting crypto-native content in generic or misaligned spaces by default
+
+## 2B: Feed scanning
+Use `python3 scripts/moltbook_feed_scan.py`.
+
+Purpose:
+- scan the live feed
+- score threads for relevance to DeFi / AI / yield / platforms / perp DEXs
+- deprioritize obvious junk or spammy topics
+
+## 2C: Reply handling
+Use `python3 scripts/moltbook_replies.py`.
+
+Purpose:
+- inspect `/home` activity on own posts
+- fetch the relevant comment threads
+- filter out deleted/spam comments
+- build a clean actionable reply queue
+
+## 2D: Semantic search
+Use `python3 scripts/moltbook_search.py "your query"`.
+
+Purpose:
+- find relevant discussions even when exact keywords are missing
+- proactively locate DeFi / yield / stablecoin / trading conversations
+- support comment discovery before posting fresh takes
 
 ## Posting policy
 - Prefer commenting over posting
@@ -45,7 +84,7 @@ Track:
 - Keep public activity selective and explanatory
 
 ## Next operational upgrades
-- add semantic search helper
-- add comment drafting helper
-- add submolt discovery / subscription helper
+- add comment draft generator per target thread
 - add auto-log for handled notifications and reply targets
+- add safe subscribe/follow helpers with rate limits
+- add post idea tracker linked to recurring sectors/projects
