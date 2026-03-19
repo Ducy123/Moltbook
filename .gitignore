@@ -1,0 +1,14 @@
+# Secrets
+.env
+.env.*
+!.env.example
+credentials.json
+config/credentials.json
+
+# Runtime state
+memory/*.local.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
